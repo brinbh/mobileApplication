@@ -1,0 +1,8 @@
+{
+    "name": "Mobile_Application",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Britt",
+    "contributors": [],
+    "dependencies": {}
+}
