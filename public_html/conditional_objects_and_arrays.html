@@ -45,7 +45,7 @@ and open the template in the editor.
             var fishTank = ["Spot", "Flame", "Aqua"];
             
             for (var i = 0; i < fishTank.length; i++){
-                result += "</br>" + fishTank(i) + " ";
+                result += "</br>" + fishTank[i] + " ";
             }
             //we got another fish who we want to add to the begining
             fishTank.unshift("Blaine");
@@ -53,13 +53,24 @@ and open the template in the editor.
             result += "</br>With one more fish: </br>";
             
             for (var i = 0; i < fishTank.length; i++){
-                result += "</br>" + fishTank(i) + " ";
+                result += "</br>" + fishTank[i] + " ";
             }
             
-                      
+            //create code that demonstrates knowledge of associative arrays
+            var result2 = "<br/>";
+            var cats = [];
+            cats["name"] = "Sophy";
+            cats["type"] = "Lion";
+            
+            result2 += cats["name"];
+            result2 += " the " + cats["type"];
+            
+
 
             function clickButton() {
-                document.getElementById("result").innerHTML = "";
+                document.getElementById("result").innerHTML = result + result2;
+                
+                
             }
         </script>
     </body>
