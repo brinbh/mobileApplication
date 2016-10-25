@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Manipulating CSS Class Properties</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type=text/css>
+            html {
+                background-color: #011f6d;
+            }
+            body {
+                background-color: #f9f9f9;
+                margin: auto;
+                width: 80%;
+                padding: 50px;
+            }
+            h1 {
+                color: #011f6d;
+                text-align: center;
+            }
+            .ex {
+                font-style: italic;
+                color: #999999;
+            }
+        </style>
+        <script>
+            function changeColor(){
+                if (document.getElementById("header").style.color == "red")
+                    document.getElementById("header").style.color = "#011f6d";
+                else
+                document.getElementById("header").style.color = "red";
+            }
+        </script>
+    </head>
+    <body>
+
+        <div>
+            <h1 id="header">Manipulating CSS Class Properties</h1>
+            <p>This is a page all about changing CSS using JavaScript. It isn't 
+            difficult to do once you understand Document Object Model. Each part
+            the HTML page can be accessed through the tag names, id, or class 
+            names. </p>
+            <p>In order to access the CSS of each of these elements, all you need
+            to do is put .style after you get the element.</p>
+            <h3>Example: </h3>
+            <p class = "ex">document.getElementById("myIdName").style</p>
+            <p>If you want to access the attribute in the CSS, you can add a 
+            .attribute to the end of .style.</p>
+            <p class = "ex">document.getElementById("myIdName").style.color = "red";</p>
+            
+            <p>Watch as you click here that the heading will change color.</p><br>
+            <button onclick="changeColor()">Click Here</button>
+
+        
+        </div>
+    </body>
+</html>

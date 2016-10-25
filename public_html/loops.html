@@ -45,13 +45,21 @@ and open the template in the editor.
         function clickButton() {
 
             // Demonstrates various uses of different kinds of loops and variables
+            var forResult = testForLoop();
+            var whileResult = testWhileLoop();
+            var doWhileResult = testDoWhileLoop();
+            var inResult = testInLoop();
+            
+            var result = forResult + whileResult + doWhileResult + inResult;
 
+            document.getElementById("result").innerHTML = result;
+        }
 
-
+            function testForLoop (){
             //FOR LOOP
 
             //Test 1: all positive numbers
-
+        
             var test01 = 5;
 
             for (var i = 5; i < 10; i++) {
@@ -116,10 +124,22 @@ and open the template in the editor.
 
             }
 
+            var result = "<strong>For Loop: </strong></br>01 Test: " + test01 +
+
+                "</br>02 Test: " + test02 +
+
+                "</br>03 Test: " + test03 +
+
+                "</br>04 Test: " + test04 +
+
+                "</br>05 Test: " + test05;
+        
+        return result;
             //Result 0
+            }
 
 
-
+            function testWhileLoop(){
             //WHILE LOOP
 
 
@@ -207,14 +227,28 @@ and open the template in the editor.
                 j--;
 
             }
+            
 
             //Result -10
+            
+            var result = "</br></br><b>While Loop: </b>" +
+
+                "</br>01 Test: " + wTest01 +
+
+                "</br>02 Test: " + wTest02 +
+
+                "</br>03 Test: " + wTest03 +
+
+                "</br>04 Test: " + wTest04 +
+
+                "</br>05 Test: " + wTest05;
+        return result;
+            }
 
 
 
 
-
-
+            function testDoWhileLoop(){
 
             //DO WHILE LOOP
 
@@ -308,11 +342,23 @@ and open the template in the editor.
 
             //Result 1 NOTE: because the while statement is never true
 
+            var result = "</br></br><b>Do/While Loop: </b>" +
+
+                "</br>01 Test: " + dTest01 +
+
+                "</br>02 Test: " + dTest02 +
+
+                "</br>03 Test: " + dTest03 +
+
+                "</br>04 Test: " + dTest04 +
+
+                "</br>05 Test: " + dTest05;
+        return result;
 
 
+            }
 
-
-
+            function testInLoop(){
 
             //FOR IN LOOP
 
@@ -346,7 +392,7 @@ and open the template in the editor.
 
             //Test 02
 
-            var fTest02 = 0;
+            var fTest02 = 1;
 
             var cube = {
 
@@ -360,72 +406,24 @@ and open the template in the editor.
 
             var x;
 
-            for (x in person) {
+            for (x in cube) {
 
-                fTest02 *= person[x];
+                fTest02 *= cube[x];
 
             }
 
             //Result 125
-
-
-
-
-
-            var resultEl = document.getElementById("result");
-
-            console.log(resultEl);
-
-
-
-
-
-            document.getElementById("result").innerHTML = "<strong>For Loop: </strong></br>01 Test: " + test01 +
-
-                "</br>02 Test: " + test02 +
-
-                "</br>03 Test: " + test03 +
-
-                "</br>04 Test: " + test04 +
-
-                "</br>05 Test: " + test05 +
-
-                "</br></br><b>While Loop: </b>" +
-
-                "</br>01 Test: " + wTest01 +
-
-                "</br>02 Test: " + wTest02 +
-
-                "</br>03 Test: " + wTest03 +
-
-                "</br>04 Test: " + wTest04 +
-
-                "</br>05 Test: " + wTest05 +
-
-                "</br></br><b>Do/While Loop: </b>" +
-
-                "</br>01 Test: " + dTest01 +
-
-                "</br>02 Test: " + dTest02 +
-
-                "</br>03 Test: " + dTest03 +
-
-                "</br>04 Test: " + dTest04 +
-
-                "</br>05 Test: " + dTest05 +
-
-                "</br></br><b>For In Loop: </b>" +
+            
+            var result = "</br></br><b>For In Loop: </b>" +
 
                 "</br>01 Test: " + fTest01 +
 
                 "</br>02 Test: " + fTest02;
+        return result;
 
-
-
-
-
+            
         }
-
+        
         //resultEl.innerHTML = "";
 
     </script>
