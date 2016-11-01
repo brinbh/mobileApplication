@@ -9,25 +9,44 @@ and open the template in the editor.
         <title>Manipulating CSS Class Properties</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style type=text/css>
-            html {
-                background-color: #011f6d;
-            }
-            body {
-                background-color: #f9f9f9;
-                margin: auto;
-                width: 80%;
-                padding: 50px;
-            }
-            h1 {
-                color: #011f6d;
-                text-align: center;
-            }
-            .ex {
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+        <style type="text/css">
+            #ex1, #ex2 {
                 font-style: italic;
                 color: #999999;
+
+            }
+            #square {
+                width: 100px; 
+                height: 50px; 
+                background-color: gold;
+                transition:2s;
+                position: absolute;
+            }
+            #square:hover {
+                width: 200px;
+                height: 200px;
+            }
+            #circle{
+                border-radius: 50px;
+                background-color: #f9f9f9;
+                width: 30px;
+                height: 50px;   
+                position: relative;
+                margin: 50px 0px 0px 20px;
+
+            }
+            #smile {
+                position: relative;
+                width: 100px;
+                height: 5px;
+                border-radius: 100%;
+                border-bottom: solid 3px #f9f9f9;
+                bottom: 30px;
+                margin: 60px 0px 0px 25px;
             }
         </style>
+
         <script>
             function changeColor(){
                 if (document.getElementById("header").style.color == "red")
@@ -35,9 +54,30 @@ and open the template in the editor.
                 else
                 document.getElementById("header").style.color = "red";
             }
+            function changeEx(){
+                document.getElementById("ex1").innerHTML = "document.getElementById(\"myIdName\").<b>innerHTML</b>";
+                document.getElementById("ex2").innerHTML = "document.getElementById(\"myIdName\").innerHTML = <b>\"some text\"</b>";
+                document.getElementById("para1").innerHTML = "If you want to change the wording in a \n\
+                                                            paragraph or any tag you can access it with .innerHTML";
+                document.getElementById("para2").innerHTML = "Watch as you click the paragraphs change.";
+            }
+            var x = 0;
+            function changeBackground(){
+                if (x==0){
+                    document.getElementById("body").style.backgroundColor = "#011f6d";
+                    document.getElementById("body").style.color = "#f9f9f9";
+                    x = 1;
+                }
+                else {
+                    document.getElementById("body").style.backgroundColor = "#f9f9f9";
+                    document.getElementById("body").style.color = "#000000";
+                    x = 0;
+
+                }
+            }
         </script>
     </head>
-    <body>
+    <body id = "body">
 
         <div>
             <h1 id="header">Manipulating CSS Class Properties</h1>
@@ -48,13 +88,24 @@ and open the template in the editor.
             <p>In order to access the CSS of each of these elements, all you need
             to do is put .style after you get the element.</p>
             <h3>Example: </h3>
-            <p class = "ex">document.getElementById("myIdName").style</p>
-            <p>If you want to access the attribute in the CSS, you can add a 
+            <p id = "ex1">document.getElementById("myIdName").style</p>
+            <p id ="para1">If you want to access the attribute in the CSS, you can add a 
             .attribute to the end of .style.</p>
-            <p class = "ex">document.getElementById("myIdName").style.color = "red";</p>
+            <p id = "ex2">document.getElementById("myIdName").style.color = "red";</p>
             
-            <p>Watch as you click here that the heading will change color.</p><br>
-            <button onclick="changeColor()">Click Here</button>
+            <p id="para2">Watch as you click here that the heading will change color.</p><br>
+            <button onclick="changeColor()">Change Header Color</button>
+            
+            <button onclick="changeEx()">Change Example</button>
+            
+            <button id="button1" onclick="changeBackground()">Change Background</button>
+            <div id ="square">Hover here to see a transition.</div>
+            <div id="circle"></div>
+            <div id="circle" style="margin: -50px 0px 0px 100px"></div>
+            <div id="smile"></div>
+            <h1 style="color: #f9f9f9; float: right;">Now you've changed the background. :)</h1>
+
+            <!--<p><a href="animations.html">Click to see amazing stuff!</a></p>/-->
 
         
         </div>
