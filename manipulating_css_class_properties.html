@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Manipulating CSS Class Properties</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+        <style type="text/css">
+            #ex1, #ex2 {
+                font-style: italic;
+                color: #999999;
+
+            }
+            #square {
+                width: 100px; 
+                height: 50px; 
+                background-color: gold;
+                transition:2s;
+                position: absolute;
+            }
+            #square:hover {
+                width: 200px;
+                height: 200px;
+            }
+            #circle{
+                border-radius: 50px;
+                background-color: #f9f9f9;
+                width: 30px;
+                height: 50px;   
+                position: relative;
+                margin: 50px 0px 0px 20px;
+
+            }
+            #smile {
+                position: relative;
+                width: 100px;
+                height: 5px;
+                border-radius: 100%;
+                border-bottom: solid 3px #f9f9f9;
+                bottom: 30px;
+                margin: 60px 0px 0px 25px;
+            }
+        </style>
+
+        <script>
+            function changeColor(){
+                if (document.getElementById("header").style.color == "red")
+                    document.getElementById("header").style.color = "#011f6d";
+                else
+                document.getElementById("header").style.color = "red";
+            }
+            function changeEx(){
+                document.getElementById("ex1").innerHTML = "document.getElementById(\"myIdName\").<b>innerHTML</b>";
+                document.getElementById("ex2").innerHTML = "document.getElementById(\"myIdName\").innerHTML = <b>\"some text\"</b>";
+                document.getElementById("para1").innerHTML = "If you want to change the wording in a \n\
+                                                            paragraph or any tag you can access it with .innerHTML";
+                document.getElementById("para2").innerHTML = "Watch as you click the paragraphs change.";
+            }
+            var x = 0;
+            function changeBackground(){
+                if (x==0){
+                    document.getElementById("body").style.backgroundColor = "#011f6d";
+                    document.getElementById("body").style.color = "#f9f9f9";
+                    x = 1;
+                }
+                else {
+                    document.getElementById("body").style.backgroundColor = "#f9f9f9";
+                    document.getElementById("body").style.color = "#000000";
+                    x = 0;
+
+                }
+            }
+        </script>
+    </head>
+    <body id = "body">
+
+        <div>
+            <h1 id="header">Manipulating CSS Class Properties</h1>
+            <p>This is a page all about changing CSS using JavaScript. It isn't 
+            difficult to do once you understand Document Object Model. Each part
+            the HTML page can be accessed through the tag names, id, or class 
+            names. </p>
+            <p>In order to access the CSS of each of these elements, all you need
+            to do is put .style after you get the element.</p>
+            <h3>Example: </h3>
+            <p id = "ex1">document.getElementById("myIdName").style</p>
+            <p id ="para1">If you want to access the attribute in the CSS, you can add a 
+            .attribute to the end of .style.</p>
+            <p id = "ex2">document.getElementById("myIdName").style.color = "red";</p>
+            
+            <p id="para2">Watch as you click here that the heading will change color.</p><br>
+            <button onclick="changeColor()">Change Header Color</button>
+            
+            <button onclick="changeEx()">Change Example</button>
+            
+            <button id="button1" onclick="changeBackground()">Change Background</button>
+            <h1 style="color: #f9f9f9; float: right;">Now you've changed the background. :)</h1>
+
+            <!--<p><a href="animations.html">Click to see amazing stuff!</a></p>/-->
+
+        
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Parameters</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    </head>
+    <body>
+        <div>Parameters</div>
+        <p>This is my sandbox code. Open console to see.</p>
+        <p>Result: </p>
+
+        <form>
+            Enter Name: <br>
+            <input type="text" id="name"><br>Insert 6-digit ID: <br>
+            <input type="text" id="id">
+            <input type="button" onclick="createCustomer()" value="Click for Result" >
+        </form>
+        <p id="result"></p>
+        <script>
+            
+            //Using Functions with parameters
+            function createCustomer(){
+                var name = document.getElementById("name").value;
+                var id = document.getElementById("id").value;
+                
+                displayCustomer(name, id);
+            }
+            
+            function displayCustomer(name, id){
+                document.getElementById("result").innerHTML = "Customer Name: " + name
+                                                                + "<br>Customer ID: " + id;                
+            }
+            
+
+                
+        </script>
+
+    </body>
+</html>

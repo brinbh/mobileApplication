@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inheritance</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    </head>
+    <body>
+        <div>Inheritance</div>
+        <p>This is my sandbox code. Open console to see.</p>
+        <form>
+            Enter First Name: <br>
+            <input type="text" id="first"><br>Enter Last Name: <br>
+            <input type="text" id="last">
+            <input type="button" onclick="createPerson()" value="Click for Result" >
+        </form>
+        <p id ="result"></p>
+        <script>
+            
+            function createPerson(){
+                var person = new Object();
+                
+                person.first = docment.getElementById("first").value;
+                person.last = document.getElementById("last").value;
+                
+                document.getElementById("result").innerHTML = person.first + " " + person.last;
+                
+                
+                                   
+            }
+            function createStudent(){
+                
+            }
+    
+        </script>
+        
+    </body>
+</html>
