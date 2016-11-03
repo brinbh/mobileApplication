@@ -1,0 +1,26 @@
+html {
+    background-color: #011f6d;
+}
+body {
+    background-color: #f9f9f9;
+    margin: auto;
+    width: 80%;
+    padding: 50px;
+    min-height: 1000px;
+}
+h1 {
+    color: #011f6d;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: #011f6d;
+    font-weight: bold;
+    padding: 10px;
+}
+h1,h2, h3 {
+    font-family: serif;
+}
+p, a {
+    font-family: sans-serif;
+}

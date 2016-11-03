@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JSON Parse and Stringify</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    </head>
+    <body>
+        <p>This is my sandbox code. Open console to see.</p>
+        <p>Result: </p>
+        <p id="result"></p>
+        <p id="result2"></p>
+        <button type="button" onclick="clickButton()">Click for Result</button>
+        <script>
+
+        function clickButton() {
+        
+        //JSON PARSE
+        //JSON stands for JavaScript Object Notation and is a way to interchage data in order to create objects
+        var merchandise ={"clothes": [
+                {"type": "shirt", "color": "red"},
+                {"type": "shirt", "color": "blue"},
+                {"type": "pants", "color": "black"} ]};
+        //var result  = JSON.parse(merchandise);
+        
+        
+        document.getElementById("result").innerHTML = merchandise.clothes[0].type + " " + merchandise.clothes[0].color
+                                                        + "<br/>" + merchandise.clothes[1].type + " " + merchandise.clothes[1].color
+                                                        + "<br/>" + merchandise.clothes[2].type + " " + merchandise.clothes[2].color;
+        
+        //STRINGIFY
+        //JSON Stringify is a way to convert a value to a JSON notation or string
+        var result2 = "";
+        var testBooleanVar = true;
+        var testNum = 55;
+        var testString = "This is an example of a stringified string.";
+        var testArray = ["num1", "num2", "num3", "num4", "num5"];
+        
+        //Boolean
+        result2 += JSON.stringify(testBooleanVar);
+        
+        //Number
+        result2 += JSON.stringify(testNum);
+        
+        //String
+        result2 += + " " + JSON.stringify(testString);
+        
+        //Date
+        result2 += " " + JSON.stringify(new Date(2016,10,10,15,4,5));
+        
+        result2 += " " + JSON.stringify(testArray);
+        
+        document.getElementById("result2").innerHTML = result2;
+       
+        
+        
+        
+        
+        
+        }
+
+        
+
+    </script>
+
+    </body>
+</html>
