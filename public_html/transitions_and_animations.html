@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Transitions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+        <style type="text/css">
+            #square {
+                width: 100px; 
+                height: 50px; 
+                background-color: gold;
+                transition:2s;
+                position: absolute;
+                
+            }
+            #square:hover {
+                width: 200px;
+                height: 200px;
+                border-radius:100px;
+            }
+            #circle{
+                border-radius: 50px;
+                background-color: #f9f9f9;
+                width: 30px;
+                height: 50px;   
+                position: absolute;
+                margin: 60px 0px 0px 50px;
+
+            }
+            #smile {
+                position: relative;
+                width: 100px;
+                height: 5px;
+                border-radius: 100%;
+                border-bottom: solid 3px #f9f9f9;
+                position: absolute;
+                margin: 150px 0px 0px 50px;
+            }
+            #whale {
+                width: 200px; 
+                transition: 2s; 
+                animation-name: moveWhale; 
+                animation-duration: 4s; 
+                position: relative; 
+                animation-iteration-count: 3;
+            }
+            @keyframes changeColor {
+                0% {background-color: red;}
+                25% {background-color: yellow;}
+                50% {background-color: blue;}
+                100% {background-color: green;}
+            }
+            @keyframes moveWhale {
+                0% {top:0px; left:-500px;}
+                100% {top:0px; left:1500px;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS3 Transitions and Animations in CSS</h1>
+        <h3>CSS3 Transitions</h3>
+        <p>CSS Transitions are used to dictate the speed of changes with any HTML tag. 
+            This can mean divs, headings, paragraphs, and even images. </p>
+        <figure id="smiley">
+            <div id ="square">Hover here to see a transition.</div>
+            <div id="circle"></div>
+            <div id="circle" style="margin: 60px 0px 0px 120px"></div>
+            <div id="smile"></div>
+        </figure>
+        
+        <h3 style="margin: 200px 0px 0px 0px;">Animations</h3>
+        <div style="position: relative; width: 150px; height: 150px; background-color: blue; animation-name: changeColor; animation-duration: 6s; animation-iteration-count: 10;">
+            <p style="color:#ffffff; padding: 5px; font-weight: bold;">This box changes color via CSS animations.</p>
+        </div>
+        <img id="whale" src="images/whale.png"/>
+        
+    </body>
+</html>
