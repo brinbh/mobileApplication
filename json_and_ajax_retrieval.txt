@@ -1,0 +1,41 @@
+    <html>
+    <head>
+        <title>JSON and Ajax Retrieval</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+		<script>
+		function readFile(){
+		var xhttp = new XMLHttpRequest();
+		var input = document.getElementById("file").value;
+		
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4)
+			{
+				if(this.status == 200){
+				var obj = JSON.parse(this.responseText);
+				var list = "<table><tr><th>Name</th><th>Weapon</th><th>Friend</th></tr>\n";
+				
+				for(var i = 0; i<obj.characters.length; i++)
+				{
+					list += "<tr><td>" + obj.characters[i].first + " " + obj.characters[i].last + "</td><td>" + obj.characters[i].weapon + "</td><td>" + obj.characters[i].friend + "</td></tr>\n"; 
+				}
+				document.getElementById("table").innerHTML = list;
+				}
+				else 
+				{
+				alert("There was a problem retrieving the text file:\n" + req.statusText);
+				}
+			}
+			xhttp.open("GET,input,true");
+			xhttp.send();
+		}
+		</script>
+    </head>
+    <body>
+        <p>JSON is a way for storing and retrieving data. It is an alternative to XML that allows for more dynamic use in HTML.</p>
+        <button type="button" onclick="readFile()">Click for Result</button>
+		<input type = "text" id = "file" value = "starWars.txt">
+		<div id="table"><p>The file will be displayed here.</p></div>
+    </body>
+</html>
