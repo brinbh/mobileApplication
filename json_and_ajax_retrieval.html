@@ -9,7 +9,7 @@
             function readFile() {
                 var xhttp = new XMLHttpRequest();
                 var input = document.getElementById("file").value;
-                //var url = "http://localhost:8383/Mobile_Application/" + input;
+                var url = new URL("https://brinbh.github.io/mobileApplication/" + input);
                 alert(input);
                 xhttp.onreadystatechange = function () {
                     alert("works");
@@ -30,7 +30,7 @@
                             alert("There was a problem retrieving the text file:\n" + req.statusText);
                         }
                     }
-                    xhttp.open("GET,input,true");
+                    xhttp.open("GET,url,true");
                     xhttp.send();
                 }
             }
