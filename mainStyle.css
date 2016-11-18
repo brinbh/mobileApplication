@@ -2,7 +2,7 @@ html {
 
 }
 body {
-	background-image: url(mobileApplication/images/paint.jpg);
+	background-image: url("mobileApplication/images/paint.jpg");
 	background-repeat: no-repeat;
     margin: auto;
     width: 80%;
