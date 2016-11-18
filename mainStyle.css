@@ -1,9 +1,9 @@
 html {
-    background-image: url("images/paint.jpg");
-	background-repeat: no-repeat;
+
 }
 body {
-    background-color: #f9f9f9;
+	background-image: url("images/paint.jpg");
+	background-repeat: no-repeat;
     margin: auto;
     width: 80%;
     padding: 50px;
