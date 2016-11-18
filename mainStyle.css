@@ -1,4 +1,6 @@
-
+html {
+	background-image: url(images/paint.jpg);
+}
 body {
 	background-color: #f9f9f9;
     margin: auto;
