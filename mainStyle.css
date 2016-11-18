@@ -1,15 +1,15 @@
 html {
-    background-color: #011f6d;
+
 }
 body {
-    background-color: #f9f9f9;
+    background-color: #333;
     margin: auto;
     width: 80%;
     padding: 50px;
     min-height: 1000px;
 }
 h1 {
-    color: #011f6d;
+    color: #;
     text-align: center;
 }
 a {
