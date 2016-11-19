@@ -1,5 +1,5 @@
 html {
-	background-image: url(images/paint.jpg);
+	background-image: url(images/paint.jpg), url(images/header.png);
 }
 body {
 	background-color: #f9f9f9;
@@ -23,4 +23,9 @@ h1,h2, h3 {
 }
 p, a {
     font-family: sans-serif;
+}
+li {
+	color: #f9f9f9;
+	text-decoration: none;
+	background-color: #1C6C86;
 }
