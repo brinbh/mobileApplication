@@ -24,7 +24,7 @@ h1,h2, h3 {
 p, a {
     font-family: sans-serif;
 }
-li {
+ul li {
 	color: #f9f9f9;
 	text-decoration: none;
 	background-color: #1C6C86;
