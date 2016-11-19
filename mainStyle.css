@@ -12,20 +12,15 @@ h1 {
     color: #;
     text-align: center;
 }
-a {
-    text-decoration: none;
-    color: #011f6d;
-    font-weight: bold;
-    padding: 10px;
-}
 h1,h2, h3 {
     font-family: serif;
 }
 p, a {
     font-family: sans-serif;
 }
-ul li {
+a {
 	color: #f9f9f9;
 	text-decoration: none;
 	background-color: #1C6C86;
+	font-style: bold;
 }
