@@ -85,6 +85,13 @@ and open the template in the editor.
 			document.getElementById("circle2").style.position = "relative";
 			document.getElementById("circle2").style.right = "100px";
 		}
+		function reset(){
+			document.getElementById("circle2").style.position = "relative";
+			document.getElementById("circle2").style.right = "0px";
+			document.getElementById("circle2").style.left = "0px";
+			document.getElementById("circle2").style.bottom = "0px";
+			document.getElementById("circle2").style.top = "0px";
+		}
 		</script>
     </head>
     <body>
@@ -110,5 +117,6 @@ and open the template in the editor.
 		<button onclick="moveDown()">Down</button>
 		<button onclick="moveLeft()">Left</button>
 		<button onclick="moveRight()">Right</button>
+		<button onclick="reset()">Reset</button>
     </body>
 </html>
