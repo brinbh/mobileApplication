@@ -10,15 +10,114 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="mainStyle.css">
-        
+        <script> 
+			function showAllStorage(){
+			alert(JSON.stringify(localStorage));
+			}
+			function loadRecipe(){
+				var rTitle = document.getElementById("r_title").value;
+				var rIngredients = localStorage.getItem(rTitle);
+				document.getElementById("r_ingredients").value = rIngredients;
+			}
+			function saveRecipe(){
+				var rTitle = document.getElementById("r_title").value;
+				var rIngredients = document.getElementById("r_ingredients").value;
+				localStorage.setItem(rTitle, rIngredients);
+			}
+			function displayRecipe(){
+				var rTitle = document.getElementById("r_title").value;
+				var rIngredients = localStorage.getItem(rTitle);
+				var recipeHTML = "<h3 style = \"text-align: center;\">" + rTitle + "</h3>" + "<p style =\"text-align: center;\">" + rIngredients + "</p>";
+				document.getElementById("r_display").innerHTML = recipeHTML;
+			}
+			function reset(){
+				localStorage.clear();
+				alert("Your cookbook has been reset.");
+			}
+			function createList() {
+				var numList = document.getElementById("numList").value;
+				if (numList > 10){
+					document.getElementById("error").innerHTML = "You must enter a number less than 10.";
+					return 0;
+					}
+				var list = [];
+				for (var i = 0; i < numList; i++){
+					list[i] = prompt("Enter new item: ");
+				}
+				var gTitle = document.getElementById("g_title").value;
+				localStorage.setItem(gTitle, JSON.stringify(list));
+			}
+			function displayList(){
+				var gTitle = document.getElementById("g_title").value;
+				var storedList = JSON.parse(localStorage.getItem(gTitle));
+				var listHTML = "<h3 style = \"text-align: center;\">" + gTitle + "</h3>" + "<p style =\"text-align: center;\">" + storedList + "</p>";
+				document.getElementById("g_display").innerHTML = listHTML;
+			}
+			function createArray(){
+				var arr = ["bread","tortillas","salsa"];
+				var storedList = localStorage.setItem("myList", JSON.stringify(arr));
+				document.getElementById("a_display").innerHTML = arr;
+			}
+			function createObject(){
+				var list = {"ingredient": "bread", "aisle": "2"};
+				var storedList = localStorage.setItem("myList", JSON.stringify(list));
+				showAllStorage();
+				document.getElementById("o_display").innerHTML = storedList;
+			}
+		</script>
+		<style>
+		r_ingredients, r_directions{
+			width: 800px;
+			height: 250px;
+			background-color: #fff;
+			float: left;
+		}
+		name, r_title{
+		    float: left;
+		}
+		
+		</style>
     </head>
     <body>
-        <form method="post">
-            <input type="text" id="bgColor" required>
-            <button onclick="validateForm()">Submit</button>
-        </form>
-        <p id="output"></p>
-        <script src="local_storage_api.js"></script>
-    </body>
+		<h1>Local Storage Example</h1>
+		<p>Use this page to save and edit recipes, create a grocery list, and ... Unfortunately it is only using local storage and will not be saved if you close the browser. It will however keep the information if you refresh the page.<br /><br /> There are many ways to store data in the local storage. You can save it as simple <strong>data</strong> (or a string), an <strong>array,</strong> an <strong>asociative array,</strong> or an <strong>object.</strong></p><br /><br />
+		<button onclick="reset()">Reset All Local Storage</button>
+		<br /><br />
+		
+		<h2>As simple data: Create and Store a Recipe</h2>
+		<p>Please enter name of recipe: <input type="text" id="r_title"/></p>
+		<p>Please enter recipe: </p>
+		<textarea id="r_ingredients" placeholder="Write Recipe Here: "></textarea>
+		<section>
+			<button onclick="loadRecipe()">Find and Edit Recipe</button>
+			<button onclick="saveRecipe()">Save</button>
+			<button onclick="displayRecipe()">Open</button>
+		</section>
+		<br />
+		<p><strong>Display Recipe Here: </strong><br /><br />
+		<section id="r_display"></section>
+		
+		<h2>As an array: Create a Grocery List</h2>
+		<p>Please enter title of list: <input type="text" id="g_title" placeholder="Your Name's List"/ ></p>
+		<p>Please enter amount of items(number less than 10) in list: <input type="text" id="numList" placeholder="1"/><p id="error" style="color: red;"></p></p>
+		<button onclick="createList()">Create List</button>
+		<button onclick="displayList()">Display List</button>
+		<p><strong>Display List Here: </strong></p>
+		<section id="g_display"></section>
+		
+		<h2>As associative arrays: List Organized by Aisle</h2>
+		<p>This will take an array like the following and display it from local storage. <br /><em>var arr = ["bread","tortillas","salsa"];</em></p>
+		
+		<button onclick="createArray()">Display Results</button>
+		
+		<p><strong>Display List Here: </strong></p>
+		<section id="a_display"></section>
+		
+		<h2>As an Object</h2>
+		<p>This will take an object like the following and display it from local storage.<br /><em>var list = {ingredient: "bread", aisle: "2"};</em></p>
+		<button onclick="createObject()">Display Results</button>
+		<p><strong>Display List Here: </strong></p>
+		<section id="o_display"></section>
+		</body>
 
 </html>
