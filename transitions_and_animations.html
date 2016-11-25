@@ -48,7 +48,7 @@ and open the template in the editor.
                 animation-name: moveWhale; 
                 animation-duration: 4s; 
                 position: relative; 
-                animation-iteration-count: 3;
+                animation-iteration-count: 1;
             }
             @keyframes changeColor {
                 0% {background-color: red;}
@@ -60,7 +60,32 @@ and open the template in the editor.
                 0% {top:0px; left:-500px;}
                 100% {top:0px; left:1500px;}
             }
+			#circle2 {
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				background-color: #1c6c86;
+				transition: 2s;
+			}
         </style>
+		<script>
+		function moveDown(){
+			document.getElementById("circle2").style.position = "relative";
+			document.getElementById("circle2").style.top = "100px";
+		}
+		function moveUp(){
+			document.getElementById("circle2").style.position = "relative";
+			document.getElementById("circle2").style.bottom = "100px";
+		}
+		function moveRight(){
+			document.getElementById("circle2").style.position = "relative";
+			document.getElementById("circle2").style.left = "100px";
+		}
+		function moveLeft(){
+			document.getElementById("circle2").style.position = "relative";
+			document.getElementById("circle2").style.right = "100px";
+		}
+		</script>
     </head>
     <body>
         <h1>CSS3 Transitions and Animations in CSS</h1>
@@ -79,5 +104,11 @@ and open the template in the editor.
             <p style="color:#ffffff; padding: 5px; font-weight: bold;">This box changes color via CSS animations.</p>
         </div>
         <img id="whale" src="images/whale.png"/>
+		
+		<div id="circle2"></div>
+		<button onclick="moveUp()">Up</button>
+		<button onclick="moveDown()">Down</button>
+		<button onclick="moveLeft()">Left</button>
+		<button onclick="moveRight()">Right</button>
     </body>
 </html>
