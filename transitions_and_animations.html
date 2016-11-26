@@ -60,6 +60,7 @@ and open the template in the editor.
                 0% {top:0px; left:-500px;}
                 100% {top:0px; left:1500px;}
             }
+			
 			#circle2 {
 				width: 50px;
 				height: 50px;
@@ -92,6 +93,30 @@ and open the template in the editor.
 			document.getElementById("circle2").style.bottom = "0px";
 			document.getElementById("circle2").style.top = "0px";
 		}
+		function growWhale(){
+			document.getElementById("whale").style.transition = "4s";
+			document.getElementById("whale").style.height = "500px";
+			document.getElementById("whale").style.width = "500px";
+		}
+		function shrinkWhale(){
+			document.getElementById("whale").style.transition = "4s";
+			document.getElementById("whale").style.height = "100px";
+			document.getElementById("whale").style.width = "100px";
+		}
+		function moveWithAnimation(){
+			var el = document.getElementById("whale");
+			var pos = 0;
+			var id = setInterval(frame, 5);
+			function frame(){
+				if(pos == 350){
+					clearInterval(id);
+				}else {
+					pos++;
+					el.style.top = pos + 'px';
+					el.style.top = pos + 'px';
+				}
+			}
+		}
 		</script>
     </head>
     <body>
@@ -99,6 +124,13 @@ and open the template in the editor.
         <h3>CSS3 Transitions</h3>
         <p>CSS Transitions are used to dictate the speed of changes with any HTML tag. 
             This can mean divs, headings, paragraphs, and even images. </p>
+			<p>This is an example of a transition that uses javascript.</p>
+		<div id="circle2"></div>
+		<button onclick="moveUp()">Up</button>
+		<button onclick="moveDown()">Down</button>
+		<button onclick="moveLeft()">Left</button>
+		<button onclick="moveRight()">Right</button>
+		<button onclick="reset()">Reset</button>
         <figure id="smiley">
             <div id ="square">Hover here to see a transition.</div>
             <div id="circle"></div>
@@ -110,13 +142,13 @@ and open the template in the editor.
         <div style="position: relative; width: 150px; height: 150px; background-color: blue; animation-name: changeColor; animation-duration: 6s; animation-iteration-count: 10;">
             <p style="color:#ffffff; padding: 5px; font-weight: bold;">This box changes color via CSS animations.</p>
         </div>
+		<div id="container">
         <img id="whale" src="images/whale.png"/>
+		</div>
+		<br/>
+		<button onclick="growWhale()">Click to make whale grow!</button>
+		<button onclick="shrinkWhale()">Click to make whale shrink!</button>
+		<button onclick="moveWithAnimation()">Click to move with animation</button>
 		
-		<div id="circle2"></div>
-		<button onclick="moveUp()">Up</button>
-		<button onclick="moveDown()">Down</button>
-		<button onclick="moveLeft()">Left</button>
-		<button onclick="moveRight()">Right</button>
-		<button onclick="reset()">Reset</button>
     </body>
 </html>
