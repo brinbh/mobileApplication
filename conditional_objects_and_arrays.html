@@ -18,38 +18,30 @@ and open the template in the editor.
         <button type="button" onclick="clickButton()">Click for Result</button>
         <script>
             var resultEl = document.getElementById("result");
-            console.log(resultEl);
-            
-            //create code that demonstrates the uses of conditional statements and Objects
-            
-    
             var numFish = 2;
             var fishA = {size: "SMALL", color: "BLUE", age: 2, gender: "F"};
             var fishB = {size: "SMALL", color: "RED", age: 1, gender: "M"};
             
             
             if (numFish == 1){
-                numFish--; //fish dies of lonliness
+                numFish--; 
                 result = "There are no fish. :(";
             }
             else if (numFish == 2){
-                numFish++; //fishes have another baby!
+                numFish++; 
                 result = "There are more fish!";
             }
             else{
-                numFish--; //fish population declines because of overpopulation
+                numFish--; 
                 result = "There are less fish.";
             } 
-            
-            //create code that demonstrates knowledge of arrays and associative arrays
             
             var fishTank = ["Spot", "Flame", "Aqua"];
             
             for (var i = 0; i < fishTank.length; i++){
                 result += "</br>" + fishTank[i] + " ";
             }
-            //we got another fish who we want to add to the begining
-            fishTank.unshift("Blaine");
+			fishTank.unshift("Blaine");
             
             result += "</br>With one more fish: </br>";
             
@@ -57,7 +49,6 @@ and open the template in the editor.
                 result += "</br>" + fishTank[i] + " ";
             }
             
-            //create code that demonstrates knowledge of associative arrays
             var result2 = "<br/>";
             var cats = [];
             cats["name"] = "Sophy";
@@ -74,5 +65,41 @@ and open the template in the editor.
                 
             }
         </script>
+		<h2>Inheritance Example</h2>
+		<form>
+            Enter First Name: <br>
+            <input type="text" id="first"><br>Enter Last Name: <br>
+            <input type="text" id="last"><br>Enter Year of Student<br>
+			<input type="text" id="year">
+			<br />
+			<br />
+			
+			<input type="button" onclick="createPerson()" value="Click for Person" ><br>
+			<input type="button" onclick="createStudent()" value="Click for Student" >
+			
+        </form>
+        <script>
+            
+            function createPerson(){
+                var person = new Object();
+                
+                person.first = document.getElementById("first").value;
+                person.last = document.getElementById("last").value;
+                
+                document.getElementById("result02").innerHTML = person.first + " " + person.last;                
+            }
+            function createStudent(){
+                var student = new createPerson();
+				student.year = document.getElementById("year").value;
+				student.first = document.getElementById("first").value;
+                student.last = document.getElementById("last").value;
+				document.getElementById("result03").innerHTML = student.first + " " + student.last + " " + student.year; 
+            }
+    
+        </script>
+		<p>Person Object</p>
+		<p id="result02"></p>
+		<p>Student Object</p>
+		<p id="result03"></p>
     </body>
 </html>

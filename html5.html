@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>HTML 5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+		<style>
+		#box {
+			width: 300px;
+			height: 300px;
+			border: 3px solid #333;
+			border-radius: 100%;
+			background-color: #efc33e;
+		}
+		</style>
+    </head>
+    <body>
+	<h1>HTML 5</h1>
+	<h2>Canvas</h2>
+	<canvas id="box"></canvas>
+	<script>
+		var box = document.getElementById('box');
+		var context = box.getContext('2d');
+		var centerX = box.width/2;
+		var centerY = box.height/2;
+		var radius = 25;
+		context.beginPath();
+		context.arc(centerX-50, centerY-20, radius, 0, 2 * Math.PI, false);
+		context.arc(centerX+50, centerY-20, radius, 0, 2 * Math.PI, false);
+		context.closePath();
+		context.fillStyle = '#333';
+		context.fill();
+		
+		context.beginPath();
+		context.arc(150,100,20,0, Math.PI, false);
+		context.closePath();
+		context.fillStyle = '#333';
+		context.fill();
+	</script>
+	<h2>Video</h2>
+		<video width="100%" controls>
+			<source src="city.mp4" type="video/mp4">
+		</video>
+		
+	</body>
+</html>

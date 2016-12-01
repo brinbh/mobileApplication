@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Javascritp Events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+		<style>
+		#bigRed{
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 100%;
+			box-shadow: 15px 15px 50px #333;
+			color: #fff;
+			text-align: center;
+			padding: 50px;
+			font-size: 1.3em;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		#bigRed:hover{
+			background-color: #e81212;
+		}
+		</style>
+		<script>
+		function mOver(obj){
+			obj.innerHTML = "You know you want to click it.";
+		}
+		function mOut(obj){
+			obj.innerHTML = "Big Red Button";
+		}
+		function clickbtn(obj){
+			if (obj.innerHTML == "You are AWESOME! Don't let anyone tell you differently."){
+				obj.innerHTML = "Big Red Button";
+			}
+			else
+				obj.innerHTML = "You are AWESOME! Don't let anyone tell you differently.";
+		}
+		</script>
+	</head>
+	<body>
+	<h1>Javascript Events</h1>
+	<h2>Events</h2>
+	<div id="bigRed" onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="clickbtn(this)">Big Red Button</div>
+	<div id="displayA"></div>
+	<h2>Mobile Events</h2>
+	<div id="displayB"></div>
+	</body>
+</html>
