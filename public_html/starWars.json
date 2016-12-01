@@ -1,0 +1,21 @@
+{
+"characters":[{
+        "first":"Han",
+        "last":"Solo",
+        "weapon":"blaster",
+        "friend":"wookie" },
+{"first":"Luke",
+        "last":"Skywalker",
+        "weapon":"lightsaber",
+        "friend":"Obi Wan"},
+{"first":"Ray",
+        "last":"unknown",
+        "weapon":"anything",
+        "friend":"Finn"},
+{"first":"Yoda",
+        "last":"Master Jedi",
+        "weapon":"The Force",
+        "friend":"Mace Windu"}
+]
+
+}
