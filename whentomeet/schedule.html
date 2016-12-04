@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Brittany Hill - CIT 261 Mobile Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+		<script>
+		function clearTable(){
+			var table = document.getElementsById("table");
+			var th = document.getElementsById("th");
+			table.removeChild(th);
+		}
+		</script>
+		<script type="text/javascript" src="calendar.js"></script>
+    </head>
+    <body>
+	<h1>Schedule</h2>
+	<p>Please select begining day</p>
+	<select id="day" autofocus="" required="">
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+        <option value="0">Sunday</option>
+      </select>
+	<button onclick="makeTable()">Make Calendar</button>
+	<button onclick="clearTable()">Clear Calendar</button>
+	<p id="result"></p>
+	<div id="wrapper">
+		<table id="output">
+		</table>
+	</div>
+	
+	</body>
+</html>

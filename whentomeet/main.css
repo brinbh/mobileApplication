@@ -1,0 +1,52 @@
+html,
+body {
+    text-align: center;
+    margin: 0;
+}
+
+body {
+    background-color: #AEC6CF;
+}
+
+#wrapper {
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: block;
+}
+
+.input {
+    width: 28%;
+    background-color: #000000;
+}
+
+table td {
+    font-size: 16px;
+    border: 1px solid #f9f9f9;
+}
+
+table {
+    margin-bottom: 48px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table th {
+    background-color: #186a7e;
+    color: #f9f9f9;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #f9f9f9;
+}
+
+.time {
+    background-color: #363636;
+    color: #f9f9f9;
+    padding: 5px;
+}
