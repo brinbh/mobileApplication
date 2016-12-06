@@ -69,13 +69,13 @@ table th {
   background-color: #4D8FA5;
   color: #f9f9f9;
   font-weight: bold;
-  padding: 0px;
+  padding: 10px;
 }
 
 .time {
   background-color: #363636;
   color: #f9f9f9;
-  padding: 0px;
+  padding: 10px;
 }
 
 #header {
