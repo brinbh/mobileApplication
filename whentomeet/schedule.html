@@ -5,15 +5,9 @@
         <title>Brittany Hill - CIT 261 Mobile Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="main.css">
-		<script>
-		function clearTable(){
-			var table = document.getElementsById("table");
-			var th = document.getElementsById("th");
-			table.removeChild(th);
-		}
-		</script>
+        <link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="calendar.js"></script>
+		<script type="text/javascript" src="mobileTable.js"></script>
     </head>
     <body>
 	<h1>Schedule</h2>
@@ -28,12 +22,14 @@
         <option value="0">Sunday</option>
       </select>
 	<button onclick="makeTable()">Make Calendar</button>
-	<button onclick="clearTable()">Clear Calendar</button>
 	<p id="result"></p>
+	<form>
 	<div id="wrapper">
 		<table id="output">
+		<form id="form" method='post'></form>
 		</table>
 	</div>
+	</form>
 	
 	</body>
 </html>

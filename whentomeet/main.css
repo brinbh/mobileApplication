@@ -31,13 +31,12 @@ table {
     background-color: black;
     color: white;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 25px;
     border-collapse: collapse;
-    border: 1px solid black;
 }
 
 table th {
-    background-color: #186a7e;
+    background-color: #186A7E;
     color: #f9f9f9;
     font-weight: bold;
     padding: 10px;
