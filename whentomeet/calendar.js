@@ -16,9 +16,13 @@ function makeTable() {
     document.getElementById("wrapper").replaceChild(table, rep);
     listeners();
 }
+var value;
+function setValue(value) {
+	document.getElementById("week").value = value;
+}
 
 function displayDays(){
-    var numDays = document.getElementById("day").value;
+    var numDays = document.getElementById("week").value;
     var day = [];
     for (var i = 0; i < 3; i++, numDays++) {
         if (numDays > 6) {

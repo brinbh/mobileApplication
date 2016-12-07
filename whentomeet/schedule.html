@@ -10,9 +10,9 @@
 		<script type="text/javascript" src="mobileTable.js"></script>
     </head>
     <body>
-	<h1>Schedule</h2>
-	<p>Please select begining day</p>
-	<select id="day" autofocus="" required="">
+	<h1>Your Schedule</h2>
+	<p class="instruction">Please select starting day</p>
+	<!--<select id="day" autofocus="" required="">
         <option value="1">Monday</option>
         <option value="2">Tuesday</option>
         <option value="3">Wednesday</option>
@@ -20,8 +20,20 @@
         <option value="5">Friday</option>
         <option value="6">Saturday</option>
         <option value="0">Sunday</option>
-      </select>
-	<button onclick="makeTable()">Make Calendar</button>
+      </select>/-->
+	<br /><br /><br /><br />
+	<div id="week">
+		<div class="day" onclick="setValue('0')">Sunday</div>
+		<div class="day" onclick="setValue('1')">Monday</div>
+		<div class="day" onclick="setValue('2')">Tuesday</div>
+		<div class="day" onclick="setValue('3')">Wednesday</div>
+		<div class="day" onclick="setValue('4')">Thursday</div>
+		<div class="day" onclick="setValue('5')">Friday</div>
+		<div class="day" onclick="setValue('6')">Saturday</div>
+		
+	</div>
+	<div id="makeCal" onclick="makeTable()">Make Calendar</div>
+	<p class="instruction">Select times available</p>
 	<p id="result"></p>
 	<form>
 	<div id="wrapper">
