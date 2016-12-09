@@ -10,7 +10,7 @@ body {
 /*TEXT*/
 h1, h2, h3, h4, th {
 	color: #f9f9f9;
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Times, Georgia, serif;
 	font-weight: normal;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -20,6 +20,7 @@ h1, h2, h3, h4, th {
   margin-top: 20px;
   width: 100%;
   display: block;
+  visibility: hidden;
 }
 
 #menu {
@@ -95,16 +96,8 @@ table th {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.instruction {
-
-   font-weight: bold;
-   float: left;
-   padding-left: 5px;
-   padding-right: 30px;
-}
-
 /*MAKE CALENDAR BUTTON*/
-#makeCal {
+#makeCal, #showWeek {
 	padding: 15px;
 	background-color: #363636;
 	color: #f9f9f9;
@@ -114,39 +107,52 @@ table th {
 	font-family: Arial, Verdana, sans-serif;
 	font-size: 1em;
 	width: 200px;
-	margin: auto;
-	margin-top: 275px;
 	border-radius: 8px;
+	margin-top: 10px;
 	position: relative;
+	z-index: 1;
+	margin-left: -50px;
 }
 
-#makeCal:hover {
+#makeCal {
+	visibility: hidden;
+}
+
+#makeCal:hover, #showWeek:hover {
 	background-color: #000;
 }
 
 /*SELECT DAY BUTTONS*/
 #week {
-	margin: auto;
-	align: center;
-	width: 350px;
+	width: 200px;
+	visibility: hidden;
+	z-index: 1;
+	position: absolute;
+	margin-left: -48px;
+	margin-top: -60px;
+	/*display: inline-block;*/
+}
+#showWeek{
+	margin-top: 0px;
 }
 .day {
 	padding: 12px;
 	background-color: #4D8FA5;
     box-shadow: 0 5px 10px #333;
-	margin: 10px;
-	float: left;
-	width: 100px;
-	border-radius: 8px;
+	width: 200px;
 	cursor: pointer;
 	font-weight: bold;
 	font-size: .9em;
 	font-family: Arial, Verdana, sans-serif;
+
 }
 .day:hover {
 	background-color: #407789;
 }
-
+#group {
+	width: 100px;
+	margin: auto;
+}
 
 
 

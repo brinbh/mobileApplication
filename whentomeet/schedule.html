@@ -6,22 +6,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript" src="calendar.js"></script>
+		<script type="text/javascript" src="results.js"></script>
 		<script type="text/javascript" src="mobileTable.js"></script>
+		<script>
+			function showWeek(){
+				if (document.getElementById("week").style.visibility == "hidden"){
+				document.getElementById("week").style.visibility= "visible";
+				document.getElementById("makeCal").style.visibility = "visible";
+				}
+				else {
+				document.getElementById("week").style.visibility= "hidden";
+				}
+				
+			}
+			function makeCalendar(){
+				document.getElementById("wrapper").style.visibility = "visible";
+				makeTable();
+			}
+		</script>
     </head>
     <body>
+	<img src="whentomeetLogo.png" style="width: 100px; margin-top: 20px;"/>
 	<h1>Your Schedule</h2>
-	<p class="instruction">Please select starting day</p>
-	<!--<select id="day" autofocus="" required="">
-        <option value="1">Monday</option>
-        <option value="2">Tuesday</option>
-        <option value="3">Wednesday</option>
-        <option value="4">Thursday</option>
-        <option value="5">Friday</option>
-        <option value="6">Saturday</option>
-        <option value="0">Sunday</option>
-      </select>/-->
-	<br /><br /><br /><br />
+	<br />
+	<div id="group"> 
+	<div id="showWeek" onclick="showWeek()">Select Starting Day</div>
+	<div id="makeCal" onclick="makeCalendar()">Make Calendar</div>
 	<div id="week">
 		<div class="day" onclick="setValue('0')">Sunday</div>
 		<div class="day" onclick="setValue('1')">Monday</div>
@@ -32,8 +42,7 @@
 		<div class="day" onclick="setValue('6')">Saturday</div>
 		
 	</div>
-	<div id="makeCal" onclick="makeTable()">Make Calendar</div>
-	<p class="instruction">Select times available</p>
+	</div>
 	<p id="result"></p>
 	<form>
 	<div id="wrapper">

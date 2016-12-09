@@ -19,6 +19,7 @@ function makeTable() {
 var value;
 function setValue(value) {
 	document.getElementById("week").value = value;
+	document.getElementById("week").style.visibility = "hidden";	
 }
 
 function displayDays(){

@@ -1,31 +1,30 @@
 var times = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00"]
-var days = { "0": "Sun.", "1": "Mon.", "2": "Tue.", "3": "Wed.", "4": "Thu.", "5": "Fri.", "6": "Sat." };
+var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday" };
 
-window.onload = function() {
+console.log('meetingId', meetingId);
+
+window.addEventListener('load', function() {
     var obj = new XMLHttpRequest();
-    var url = new URL("https://goldingaustin.github.io/CIT261-Group-Project/json/test.json");
+    // var urlID = "http://example.com/results?id=AZK3DS";
+    // var id = urlID.substring(urlID.lastIndexOf('=') + 1);
+    // console.log(id);
+    var url = "/getMeetingJson?meetingId=" + meetingId;
     obj.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log("ResponseText:", this.responseText);
             var meetup = JSON.parse(this.responseText);
+            console.log("Meetup:", meetup);
             var matches = findCommon(meetup);
-            var days = parseDates(meetup);
-            makeTable(days);
+            makeTable(meetup.members[0].days[0].date);
             addMatches(matches);
         }
     };
     obj.open("GET", url, true);
     obj.send();
-};
-
-function parseDates(meetup) {
-    var day = new Date(meetup.meetup.members[0].days[0].date);
-    var firstDay = day.getDay();
-    return firstDay;
-}
+});
 
 function findCommon(meetup) {
     var memb = [];
-    meetup = meetup.meetup;
     for (var x in meetup.members[0].days) {
         memb['day'+x] = [];
         for (var i in meetup.members) {
@@ -49,8 +48,10 @@ function makeTable(firstDay) {
     var table = document.createElement("table");
     var numDays = displayDays(firstDay);
     table = addDays(table, numDays);
+    var pos = 8;
     for (var i = 0, x = 0; i < times.length; x++, i++) {
-        table = addTimes(times[i], table, i);
+        table = addTimes(times[i], table, pos);
+        pos += .5;
     }
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);
@@ -70,8 +71,8 @@ function displayDays(firstDay){
 function addDays(table, day) {
     var placehold = document.createElement("th");
     var day1 = document.createElement("th");
-    var day2 = document.createElement("td");
-    var day3 = document.createElement("td");
+    var day2 = document.createElement("th");
+    var day3 = document.createElement("th");
     var tr = document.createElement("tr");
     var day1Text = document.createTextNode(days[day[0]]);
     var day2Text = document.createTextNode(days[day[1]]);
@@ -115,6 +116,12 @@ function addMatches(times) {
         for (var x = 0; x < times[i].length; x++) {
             var temp = document.getElementsByClassName(times[i][x]);
             temp[i].style.backgroundColor = "#4fff63";
-        }
+       	   }
     }
+}
+
+var value;
+function setValue(value) {
+	document.getElementById("week").value = value;
+	document.getElementById("week").style.visibility = "hidden";	
 }

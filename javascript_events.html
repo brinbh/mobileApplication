@@ -22,6 +22,18 @@
 		#bigRed:hover{
 			background-color: #e81212;
 		}
+		#obj {
+			width: 100px;
+			height: 100px;
+			background-color: #407789;
+			cursor: pointer;
+			border-radius = 0%;
+		}
+		#obj p {
+			color: #fff;
+			padding: 20px;
+			test-align:center;
+		}
 		</style>
 		<script>
 		function mOver(obj){
@@ -37,14 +49,34 @@
 			else
 				obj.innerHTML = "You are AWESOME! Don't let anyone tell you differently.";
 		}
+		
+		function createCircle(){
+			var obj = document.getElementById("obj");
+			var p = document.getElementById("obj").firstChild;
+			if (obj.style.borderRadius == "0%"){
+				obj.style.borderRadius = "100%";
+				p.innerHTML = "Now it is a brown circle.";
+			}
+			else {
+				obj.style.borderRadius = "0%";
+				obj.style.backgroundColor = "#6d5d5d";
+				p.innerHTML = "Now it is a brown square.";
+			}
+			
+		}
+		function modifyObj(){
+			var obj = document.getElementById("obj");
+			obj.addEventListener("click", createCircle, false);
+		}
 		</script>
 	</head>
 	<body>
 	<h1>Javascript Events</h1>
-	<h2>Events</h2>
+	<h2>Events - wiring it into HTML</h2>
 	<div id="bigRed" onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="clickbtn(this)">Big Red Button</div>
-	<div id="displayA"></div>
-	<h2>Mobile Events</h2>
-	<div id="displayB"></div>
+	
+	<h2>Events - with event listener</h2>
+	<div id="obj" onclick="modifyObj()"><p>Click on this lovely box</p></div>
+
 	</body>
 </html>
