@@ -13,12 +13,70 @@
 			border-radius: 100%;
 			background-color: #efc33e;
 		}
+		#speechBubble, #notes {
+			width: 200px;
+			height: 200px;
+			float: right;
+		}
+		
 		</style>
+		<script>
+		function makeFace(){
+			var input = document.getElementById("input").value;
+			if (input == "shocked")
+				makeShocked();
+			else if (input == "sad")
+				makeSad();
+		}
+		function makeShocked(){
+			var speechBubble = document.getElementById('speechBubble');
+			var cxt02 = speechBubble.getContext('2d');
+			var input = document.getElementById("input").value;
+			cxt02.clearRect(0, 0, 100, 100);
+			context.clearRect(100, 80, 100, 100);
+			context.beginPath();
+			context.arc(150,110,25,10, Math.PI, false);
+			context.closePath();
+			context.fillStyle = '#333';
+			context.fill();
+			
+			cxt02.font="20px Georgia";
+			cxt02.fillText("I am " + input,10,50);
+		}
+		function makeSad(){
+			
+			var speechBubble = document.getElementById('speechBubble');
+			var cxt02 = speechBubble.getContext('2d');
+			var input = document.getElementById("input").value;
+			cxt02.clearRect(0, 0, 300, 300);
+			context.clearRect(100, 80, 100, 100);
+			context.beginPath();
+			context.arc(150,120,30,0, Math.PI, true);
+			context.closePath();
+			context.fillStyle = '#333';
+			context.fill();
+			
+			cxt02.font="20px Georgia";
+			cxt02.fillText("I am " + input,10,50);
+		}
+		function saveNotes(){
+			
+			var notes = document.getElementById('notes');
+			var cxt03 = notes.getContext('2d');
+			var text = document.getElementById('text').value;
+			cxt03.clearRect(0, 0, 300, 300);
+			cxt03.font="20px Georgia";
+			cxt03.fillText(text,10, 20);
+		}
+		</script>
     </head>
     <body>
 	<h1>HTML 5</h1>
 	<h2>Canvas</h2>
 	<canvas id="box"></canvas>
+	<canvas id="speechBubble"></canvas>
+	<p>Enter <strong>shocked</strong> to see a shocked face. (single word without spaces or capitilizations)</p>
+	<input type="text" id="input"></input><button onclick="makeFace()">Enter</button>
 	<script>
 		var box = document.getElementById('box');
 		var context = box.getContext('2d');
@@ -38,10 +96,17 @@
 		context.fillStyle = '#333';
 		context.fill();
 	</script>
+	<canvas id="notes"></canvas>
+	<p>Enter your note here: </p>
+	<textarea id="text"></textarea><button onclick="saveNotes()">Enter</button>
 	<h2>Video</h2>
 		<video width="100%" controls>
 			<source src="city.mp4" type="video/mp4">
 		</video>
+	<h2>Audio</h2>
+		<audio width="100%" controls>
+			<source src="frog.mp3" type="audio/mp3">
+		</audio>
 		
 	</body>
 </html>
